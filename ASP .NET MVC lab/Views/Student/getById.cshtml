@@ -1,0 +1,38 @@
+﻿@model Student
+<div class="card" style="width: 18rem;">
+    <img src="~/assets/img/student/@Model.image" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@Model.name</h5>
+        <p class="card-text">@Model.ssn</p>
+        <p class="card-text">@Model.age</p>
+        <p class="card-text">@Model.address</p>
+        <p class="card-text">@Model.email</p>
+
+        @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Course</th>
+            <th>Degree</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                
+            @foreach (var grade in Model.StudentCourses)
+            {
+                <th scope="row">@grade.Course.Name</th>
+                if (grade.Grade >= (double)grade.Course.MinDegree)
+                {
+                    <th class="bg-success">@grade.Grade</th>
+                }
+                else
+                {
+                    <th class="bg-danger">@grade.Grade</th>
+                }
+            }
+            </tr>
+    </tbody>
+    </table>

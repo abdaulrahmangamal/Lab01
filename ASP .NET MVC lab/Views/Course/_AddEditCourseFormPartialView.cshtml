@@ -1,0 +1,27 @@
+﻿@model Course
+
+<div class="mb-3">
+    <label asp-for="Name" class="form-label"></label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+
+</div>
+<div class="mb-3">
+    <label asp-for="Topic" class="form-label"></label>
+    <input asp-for="Topic" class="form-control" />
+    <span asp-validation-for="Topic" class="text-danger"></span>
+
+</div>
+<div class="mb-3">
+    <label asp-for="Degree" class="form-label"></label>
+    <input asp-for="Degree" class="form-control" />
+    <span asp-validation-for="Degree" class="text-danger"></span>
+
+</div>
+<div class="mb-3">
+    <label asp-for="MinDegree" class="form-label"></label>
+    <input asp-for="MinDegree" class="form-control" />
+    <span asp-validation-for="MinDegree" class="text-danger"></span>
+
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>

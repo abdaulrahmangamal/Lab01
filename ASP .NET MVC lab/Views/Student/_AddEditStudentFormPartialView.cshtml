@@ -1,0 +1,45 @@
+﻿@model Student
+@{
+    SelectList dept = new SelectList(ViewBag.depts, "deptid", "Name");
+}
+<div class="mb-3">
+
+    <label asp-for="name" class="form-label"></label>
+    <input asp-for="name" class="form-control" />
+    <span asp-validation-for="name" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="age" class="form-label"></label>
+    <input asp-for="age" class="form-control" />
+    <span asp-validation-for="age" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="image" class="form-label"></label>
+    <input asp-for="image" class="form-control" />
+    <span asp-validation-for="image" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="email" class="form-label"></label>
+    <input asp-for="email" class="form-control" />
+    <span asp-validation-for="email" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="address" class="form-label"></label>
+    <input asp-for="address" class="form-control" />
+    <span asp-validation-for="address" class="text-danger"></span>
+
+</div>
+<div class="mb-3">
+    <label asp-for="DeptId" class="form-label"></label>
+    <select class="form-control" asp-items="dept" asp-for="DeptId">
+        @* <option value="0"> -- Select Department --</option> *@
+    </select>
+    <span asp-validation-for="DeptId" class="text-danger"></span>
+
+    @* <select>
+        @foreach (var d in ViewBag.depts)
+        {
+            <option value="@d.deptid">@d.Name</option>
+        }
+    </select> *@
+</div>

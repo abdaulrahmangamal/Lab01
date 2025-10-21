@@ -1,0 +1,35 @@
+﻿
+<a asp-action="addInstructor" asp-controller="Instructor" class="btn btn-outline-info">Add Instructor</a>
+<table class="table">
+    <thead>
+        <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Image</th>
+        <th scope="col">Hiring Date</th>
+        <th scope="col">Address</th>
+        <th scope="col">Department</th>
+        <th scope="col">CRUD buttons</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var ins in Model)
+        {
+            <tr>
+                <th scope="row">@ins.Id</th>
+                <td>@ins.Name</td>
+                <td>@ins.Salary</td>
+                <td>@ins.Image</td>
+                <td>@ins.HiringDate</td>
+                <td>@ins.Address</td>
+                <td>@ins.DeptId</td>
+                <td>
+                    @Html.ActionLink("View Details", "getbyid", new { id = ins.Id }, "instructor")
+                    <a asp-action="EditInstructor" asp-controller="Instructor" asp-route-id="@ins.Id" class="btn btn-outline-info">Edit</a>
+                    <a asp-action="Delete" asp-controller="Instructor" asp-route-id="@ins.Id" class="btn btn-outline-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

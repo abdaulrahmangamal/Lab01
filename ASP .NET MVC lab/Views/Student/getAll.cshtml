@@ -1,0 +1,37 @@
+﻿<h1>hello from getAll</h1>
+<a href="/student/addstudent" class="btn btn-outline-primary">Add New Student</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">SSn</th>
+            <th scope="col">name</th>
+            <th scope="col">Age</th>
+            <th scope="col">image</th>
+            <th scope="col">email</th>
+            <th scope="col">address</th>
+            <th scope="col">CRUD buttons</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var std in Model)
+        {
+            <tr>
+                <th scope="row">@std.ssn</th>
+                <td>@std.name</td>
+                <td>@std.age</td>
+                <td>@std.image</td>
+
+                @* <td>
+                    <img src="~/assets/img/Student/17.jpg" />
+                </td> *@
+                <td>@std.email</td>
+                <td>@std.address</td>
+                <td>@Html.ActionLink("View Details", "getbyid", new { id = std.ssn}, "student")
+                <a asp-action="EditStudent" asp-controller="Student" asp-route-id="@std.ssn" class="btn btn-outline-info">Edit</a>
+                <a asp-action="Delete" asp-controller="Student" asp-route-id="@std.ssn" class="btn btn-outline-danger">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

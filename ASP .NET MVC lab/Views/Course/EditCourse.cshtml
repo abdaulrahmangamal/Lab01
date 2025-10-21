@@ -1,0 +1,10 @@
+﻿@model Course
+@* @{
+    SelectList dept = new SelectList(ViewBag.depts, "deptid", "Name");
+} *@
+<form asp-action="EditCourse" asp-asp-controller="Course">
+    <input asp-for="Id" hidden />
+    <partial name="_AddEditCourseFormPartialView" />
+
+</form>
+@Html.ActionLink("Back to list", "getAll");

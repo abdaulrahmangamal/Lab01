@@ -1,0 +1,15 @@
+﻿@model Department
+@{
+    // SelectList dept = new SelectList(ViewBag.depts, "deptid", "Name");
+    // branches brch;
+    // SelectList brchs = new SelectList(Enum.GetValues(typeof(branches)),"Text","Value");
+}
+<form asp-action="EditDepartment" asp-controller="Department">
+    <input hidden asp-for="deptid" />
+    <partial name="_AddEditDepartmentFormPartialView"></partial>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+@Html.ActionLink("Back to list", "getAll");

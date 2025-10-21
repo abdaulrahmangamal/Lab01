@@ -1,0 +1,7 @@
+﻿@model Department
+<form action="/department/AddNewDepartment" method="post">
+    <partial name="_AddEditDepartmentFormPartialView"></partial>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+@Html.ActionLink("Back to list", "getAll");
